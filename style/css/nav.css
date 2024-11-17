@@ -1,0 +1,113 @@
+/* MENU HAMBURGER */
+
+.hamburger {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  background-color: transparent;
+  z-index: 4;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Para animação suave ao clicar */
+}
+
+.hamburger span {
+  display: block;
+  width: 35px;
+  height: 4px;
+  margin: 6px auto;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg); /* Move e gira a primeira barra */
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0; /* Esconde a barra do meio */
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg); /* Move e gira a terceira barra */
+}
+
+/* O resto do seu CSS continua aqui... */
+
+/* Estilo do elemento opcoes */
+#opcoes {
+  
+  display: none; /* Oculta o quadrado inicialmente */
+  border: 1px solid #ccc;
+  background-color: rgba(34, 34, 34, 0.4); /* Com transparência */
+  padding: 20px;
+  position: fixed; /* Posiciona o elemento fixo na tela */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  color: white;
+  font-family: "Poppins", monospace;
+  border-radius: 10px;
+  width: 400px;
+  height: 400px;
+  top: 30px;
+  right: 30px;
+  backdrop-filter: blur(5px); /* Adiciona o efeito de blur */
+  transform-origin: top right; /* Define o ponto de origem da transformação */
+  opacity: 0; /* Começa invisível */
+}
+
+/* Classe para animação de aparecimento */
+#opcoes.aparecer {
+  display: block; /* Garante que o elemento seja exibido */
+  animation: aparecer 0.5s forwards; /* Animação para aparecer */
+}
+
+/* Keyframes para a animação de aparecer */
+@keyframes aparecer {
+  0% {
+    opacity: 0; /* Começa invisível */
+    transform: scale(0); /* Reduzido e deslocado */
+  }
+  100% {
+    opacity: 1; /* Termina visível */
+    transform: scale(1) translate(0, 0); /* Termina no tamanho normal e na posição original */
+  }
+}
+
+/* Classe para animação de saída */
+#opcoes.sair {
+  animation: sair 0.5s forwards; /* Animação para sair */
+}
+
+/* Keyframes para a animação de sair */
+@keyframes sair {
+  0% {
+    opacity: 1; /* Começa visível */
+    transform: scale(1) translate(0, 0); /* Começa no tamanho normal */
+  }
+  100% {
+    opacity: 0; /* Termina invisível */
+    transform: scale(0); /* Reduzido e deslocado */
+  }
+}
+
+/* Estilo para cada opção dentro do #opcoes */
+#opcoes ul {
+  list-style-type: none; /* Remove marcadores da lista */
+  padding: 0; /* Remove padding da lista */
+}
+
+#opcoes li {
+  transition: transform 0.3s, text-decoration 0.3s; /* Adiciona transição suave */
+  padding: 10px; /* Um pouco de espaçamento interno */
+  cursor: pointer;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* Animação ao passar o mouse */
+#opcoes li:hover {
+  transform: scale(1.1); /* Aumenta um pouco o tamanho */
+  text-decoration: underline; /* Adiciona sublinha */
+}

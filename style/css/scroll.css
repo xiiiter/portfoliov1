@@ -1,0 +1,28 @@
+/* Para navegadores baseados em WebKit */
+::-webkit-scrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Cor da parte rolável */
+  border-radius: 20px; /* Arredonda os cantos */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Cor quando o usuário passa o mouse */
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Cor do fundo do scroll */
+}
+
+
+/* Para Firefox */
+html {
+  scrollbar-width: thin; /* Define a espessura da barra de rolagem */
+  scrollbar-color: #888 transparent; /* Cor do thumb e track */
+  border-radius: 20px;
+  scroll-behavior: smooth;
+}
